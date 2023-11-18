@@ -5,7 +5,7 @@ import { useLocalStorage } from "usehooks-ts";
 import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 
 import { Button, Separator, Skeleton, Accordion } from "@/components/ui";
-import { NavItem, Organization } from ".";
+import NavItem, { Organization } from "./nav-item";
 
 type SidebarProps = {
   storageKey?: string;
