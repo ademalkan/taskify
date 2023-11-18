@@ -1,7 +1,7 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div className="fixed bottom-0 w-full p-4 border-t bg-slate-100">
       <div className="md:max-w-screen-2xl mx-auto flex items-center w-full justify-between">
@@ -18,3 +18,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default Footer;
