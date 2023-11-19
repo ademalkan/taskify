@@ -1,4 +1,6 @@
 "use  client";
+import { toast } from "sonner";
+
 import {
   Button,
   Popover,
@@ -11,7 +13,6 @@ import { FormInput } from "./form-input";
 import { FormSubmit } from "./form-submit";
 import { useAction } from "@/hooks";
 import { createBoard } from "@/actions";
-import { toast } from "sonner";
 
 type FormPopoverProps = {
   children: React.ReactNode;
@@ -54,26 +55,26 @@ export const FormPopover = ({
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           Create Board
         </div>
+        <PopoverClose asChild>
+          <Button
+            className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600"
+            variant={"ghost"}
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </PopoverClose>
+        <form action={onSubmit} className="space-y-4">
+          <div className="space-y-4">
+            <FormInput
+              id="title"
+              label="Board Title"
+              type="text"
+              errors={fieldErrors}
+            />
+            <FormSubmit className="w-full">Create Board</FormSubmit>
+          </div>
+        </form>
       </PopoverContent>
-      <PopoverClose asChild>
-        <Button
-          className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600"
-          variant={"ghost"}
-        >
-          <X className="h-4 w-4" />
-        </Button>
-      </PopoverClose>
-      <form action={onSubmit} className="space-y-4">
-        <div className="space-y-4">
-          <FormInput
-            id="title"
-            label="Board Title"
-            type="text"
-            errors={fieldErrors}
-          />
-          <FormSubmit className="w-full">Create Board</FormSubmit>
-        </div>
-      </form>
     </Popover>
   );
 };
