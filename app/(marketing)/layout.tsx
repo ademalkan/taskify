@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar } from "./_components/navbar";
-import { Footer } from "./_components/footer";
+import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer";
 
 const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
