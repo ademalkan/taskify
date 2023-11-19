@@ -26,7 +26,7 @@ type NavItemProps = {
   organization: Organization;
   onExpand: (id: string) => void;
 };
-const NavItem = ({
+export const NavItem = ({
   isExpanded,
   isActive,
   organization,
@@ -104,8 +104,6 @@ const NavItem = ({
     </AccordionItem>
   );
 };
-
-export default NavItem;
 
 NavItem.Skeleton = function SkeletonNavItem() {
   return (

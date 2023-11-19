@@ -28,7 +28,7 @@ export const useAction = <TInput, TOutput>(
       try {
         const { fieldErrors, error, data } = await action(input);
         if (!{ fieldErrors, error, data }) return;
-        if (fieldErrors) setFieldErrors(fieldErrors);
+        setFieldErrors(fieldErrors);
         if (error) {
           setError(error);
           options.onError?.(error);
